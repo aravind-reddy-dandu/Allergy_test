@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='Images/Tab.png') }}">
+    <!-- Vendor CSS Files -->
+    <link href="../static/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../static/css/style.css" rel="stylesheet">
+    <link href="../static/css/boot_style.css" rel="stylesheet">
+    <script src="../static/vendor/jquery/jquery.min.js"></script>
+    <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="../static/vendor/php-email-form/validate.js"></script>
+    <script src="../static/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="../static/vendor/counterup/counterup.min.js"></script>
+    <script src="../static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="../static/vendor/venobox/venobox.min.js"></script>
+    <script src="../static/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="../static/vendor/typed.js/typed.min.js"></script>
+    <script src="../static/vendor/aos/aos.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="https://www.amcharts.com/lib/4/plugins/wordCloud.js"></script>
+    <script src="https://www.amcharts.com/lib/4/plugins/sliceGrouper.js"></script>
+    <script src="https://unpkg.com/colortranslator@1.2.0/dist/colortranslator.web.js"></script>
+    <script src="{{ url_for('static', filename='js/Bargraph.js') }}"></script>
+</head>
+
+<body style="overflow: hidden">
+
+<div class="col-xl-10 col-lg-10 offset-xl-1 offset-lg-1">
+    <div class="row" id="explore" style="align-content: center; height: 50px">
+        <div class="col-xl-12 col-lg-12">
+            <span id="titleId" style="margin-left: 13vw">BarGraph plots for different attributes</span>
+            <div style="float:right;">
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" onclick="callMap('');" name="GraphRadio" id="barGraphRadio" value="Bar Graph"
+                       checked>
+                <label class="form-check-label" for="barGraphRadio">
+                    Bar Graph
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="radio" onclick="callHistogram('');" name="GraphRadio" id="histogramRadio" value="Histogram">
+                <label class="form-check-label" for="histogramRadio">
+                    Histogram
+                </label>
+            </div>
+            </div>
+            {#            <a type="hidden" id="indexEle" style="float: right; margin-right: 1vw">Index</a>#}
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-xl-12 col-lg-12">
+            <div class="card" style="height: 40vw;margin-right: 1vw;">
+                <div class="card-header" id="dirTreeheader" style="text-align: center">
+                </div>
+                <div class="card-body" id="dirtreebody"></div>
+            </div>
+        </div>
+
+    </div>
+    <div><a href="#" class="previous" onclick="callSelMap('previous');" style="float: left; margin-left: 0vw">&laquo;
+        Previous</a></div>
+    <div class="textBox"><a style="margin-left: 30vw">Index </a><input class="" type="number" id="myInput"
+                                                                       style="text-align: center; width: 5vw" value="0">
+        <a href="#" id="goButton" class="next" onclick="callSelMap('go');">Go
+            &raquo;</a>
+        <a href="#" class="next" onclick="callSelMap('next');" style="float: right; margin-right: 1vw">Next
+            &raquo;</a></div>
+
+</body>
+</html>
